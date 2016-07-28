@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="InterconectaTspService" targetNamespace="http://ws.interconecta.tsp.com/" xmlns:tns="http://ws.interconecta.tsp.com/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"
+ >
+    <message name="timbraEnviaCFDI"/>
+    <message name="timbraEnviaCFDIResponse"/>
+    <message name="cancelaCFDI"/>
+    <message name="cancelaCFDIResponse"/>
+    <portType name="InterconectaTsp">
+        <operation name="timbraEnviaCFDI">
+            <input message="tns:timbraEnviaCFDI"/>
+            <output message="tns:timbraEnviaCFDIResponse"/>
+        </operation>
+        <operation name="cancelaCFDI">
+            <input message="tns:cancelaCFDI"/>
+            <output message="tns:cancelaCFDIResponse"/>
+        </operation>
+    </portType>
+    <binding name="InterconectaTspPortBinding" type="tns:InterconectaTsp">
+        <operation name="timbraEnviaCFDI">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="cancelaCFDI">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="InterconectaTspService">
+        <port name="InterconectaTspPort" binding="tns:InterconectaTspPortBinding"/>
+    </service>
+</definitions>

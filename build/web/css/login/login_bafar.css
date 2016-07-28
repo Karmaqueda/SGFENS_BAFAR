@@ -1,0 +1,338 @@
+
+/* 
+    Document   : login_pretoriano
+    Created on : 02-ene-2013, 12:41:56
+    Author     : ISCesarMartinez
+    Description:
+        CSS especial para login de sistema Pretoriano Soft.
+*/
+
+@font-face {
+	font-family: 'Montserrat', sans-serif;
+	
+}
+
+
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}
+@media (max-width: 480px) { 
+#login_body_window .inner{
+	width:100% !important;
+	}
+#login_body_window .inner input{
+	width:100% !important;
+	padding-right:0px;
+	}
+#login_body_window .inner form{
+	width:80% !important;
+	}
+#login_body_window
+{
+	margin: 0 0 0 0px;
+	padding: 0;
+	width: 100% !important;
+	height: 340px;/*240px;*/
+	/*background: transparent url('../../images/blue/bg_login_window.png') no-repeat top;*/
+}
+}
+@media (max-width: 555px) { 
+#welcome{
+	width:100% !important;
+	}
+#box-login{
+	background-color:#FFF;
+	width: 90% !important;
+}
+#logo_gespro_02 img{
+	width:70% !important;
+	height:70% !important;
+	
+	}
+}
+@media (max-width: 1200px) { 
+	#envolvente1{
+		margin-top:0px !important;
+		padding-top:0px !important;
+		}
+}
+body {
+	line-height:1.5;
+}
+
+
+body::before {
+	
+	background: linear-gradient( #83828c, #51545d );
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(81,84,93)),color-stop(1, rgb(131,130,140)));
+	
+    background-size: cover;
+    background-attachment: fixed;
+    content: '';
+    will-change: transform;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+}
+
+
+body.login
+{
+        
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: #363636;
+	
+}
+#envolvente1{
+position: relative;
+	width: 100%;
+	/*background-color: rgba(255,255,255,0.5);*/
+	padding-top:40px;
+	padding-bottom:40px;
+	margin-top:50px;
+	margin-bottom:50px;
+}
+
+#login_wrapper{
+	width:100% !important;
+	}
+#gespro_01{
+	display:none !important;
+	
+	}
+	
+
+	
+#logo_gespro_02{
+	display:block !important;
+	margin-bottom:15px;
+	margin-top:15px;
+	}
+#logo_gespro_02 img{
+	width:300px;
+	}
+#welcome {
+background-color:#163860;
+height:55px;
+color:#FFF;
+font-size:36px;
+	}
+#box-login{
+	background-color:#FFF;
+	width: 530px;;
+}
+
+
+#login_body_window
+{
+	margin: 0 0 0 0px;
+	padding: 0;
+	width: 351px;
+	height: 340px;/*240px;*/
+	/*background: transparent url('../../images/blue/bg_login_window.png') no-repeat top;*/
+}
+
+#login_body_window .inner
+{
+	margin: 0;
+	padding: 0;
+	width: 300px;
+	height: 235px;
+	padding-top:10px
+}
+
+#login_body_window .inner p
+{
+	margin-top: 30px;
+}
+
+
+
+#adholder {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top:0px;
+    
+}
+
+/*
+#adinner {
+    height: 100%;
+    width:920px;
+    margin:0px;
+    right: 0px;
+}
+.adright {
+    width:453px;
+    position: relative;
+    margin:0px;
+    height:100%;
+    overflow: hidden;
+    z-index:99;
+    float:right;
+    right: 0px;
+    
+    background-color: transparent;
+    background-image: url("../../images/login/coliseo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+*/
+
+#adinner {
+    height: 100%;
+    width:920px;
+    margin:0px;
+    right: 0px;
+}
+
+
+
+.adright {
+    width:920px;
+    position: relative;
+    margin:0px;
+    height:100%;
+    overflow: hidden;
+    z-index:99;
+    float:right;
+    right: 0px;
+    
+    background-color: transparent;
+    background-image: url("../../images/login/coliseo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.clear 
+{
+	clear: both;
+}
+
+.alert_warning
+{
+	margin: 0;
+	padding: 0;/*padding: 1px 1px 1px 30px;*/
+	background: url(../../images/warning.png) no-repeat right center #fcf2a5;
+	border: 1px solid #edbf06;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 1px 4px #cccccc;
+ 	-webkit-box-shadow: 0 1px 2px #cccccc;
+ 	box-shadow: 0 1px 2px #cccccc;
+	color: #333333;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 10px 0 10px 0;
+	text-shadow:0 0 0 transparent;
+}
+
+.noshadow
+{
+	-moz-box-shadow: 0 0 0 transparent;
+ 	-webkit-box-shadow: 0 0 0 transparent;
+ 	box-shadow: 0 0 0 transparent;
+}
+
+a
+{
+        color: #163860; /*#1F92FF;*/
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+a:hover
+{
+	color: #3583de;/*#2F4E85;*/
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+a:active
+{
+	color: #000000;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+
+/* Input elements */
+input[type=text], input[type=password], select
+{
+	padding: 10px;
+	font-size: 14px;
+	color:  #000000;
+	font-weight: bold;
+	margin: 0;
+        border: 1px solid #FFF;
+		background-color:#ecebec;
+}
+
+input[type=text]:hover, input[type=password]:hover, textarea:hover
+{
+	background-color: #d0d0d0;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus
+{
+	background-color: #d0d0d0;
+}
+
+input[type=text].blur, input[type=password].blur, textarea.blur
+{
+	color: #cccccc; /* #999;*/
+ 	font-weight: normal;
+ 	/*font-style: italic;*/
+}
+
+.loginLinePretoriano{
+    background-color: #008584; 
+    width: 100%; 
+    line-height:0.65;
+}
+
+#login_submit_text{
+    text-align: center; 
+    font-size: 18px; 
+    width: 100%;
+	background-color:#163860;
+	margin-top:35px;
+}
+
+#login_submit_text a
+{
+        color: #FFF;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+#login_submit_text a:hover
+{
+	color: #3583de;/*#2F4E85;*/
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+#login_submit_text a:active
+{
+	color: #000000;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}

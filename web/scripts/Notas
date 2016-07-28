@@ -1,0 +1,17 @@
+
+Archivo que contiene notas, comentarios , obeservaciones sobre el proyecto
+
+Héctor  26-01-2015
+
+* La validación de licencias en consola ahora es controlada por el campo ACCESO_SGFENS_NUM_LICENCIAS_MOVILES
+de la tabla empresa_permiso_aplicacion , son indiferentes licencias de moviles, empleados, usuarios.
+
+
+Héctor 30-04-2015
+
+
+El campo FILTROS de la tabla FILTROS se guardara la inf de la siguiente forma (Obligatoriamente):
+Separado por comas , y NA cuando no aplique el parametro
+Fecha Inicio, Fecha Final, Id Usuario , Id Cliente
+
+Ejemplo :  10/04/2015,NA,20,NA

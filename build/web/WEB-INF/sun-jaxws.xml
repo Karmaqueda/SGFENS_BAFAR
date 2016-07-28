@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint implementation="com.tsp.sgfens.ws.WSConexionMovil" name="WSConexionMovil" url-pattern="/WSConexionMovil"/>
+  <endpoint implementation="com.tsp.microsip.ws.InterconectaMicrosipWs" name="InterconectaMicrosipWs" url-pattern="/InterconectaMicrosipWs"/>
+  <endpoint implementation="com.tsp.sgfens.ws.WSConexionPuntoDeVenta" name="WSConexionPuntoDeVenta" url-pattern="/WSConexionPuntoDeVenta"/>
+  <endpoint implementation="com.tsp.sgfens.ws.WSConexionMovil" name="WSConexionMovil" url-pattern="/WSConexionMovil"/>
+  <endpoint implementation="com.tsp.microsip.ws.InterconectaMicrosipWs" name="InterconectaMicrosipWs" url-pattern="/InterconectaMicrosipWs"/>
+  <endpoint implementation="com.tsp.sgfens.ws.WSConexionPuntoDeVenta" name="WSConexionPuntoDeVenta" url-pattern="/WSConexionPuntoDeVenta"/>
+</endpoints>

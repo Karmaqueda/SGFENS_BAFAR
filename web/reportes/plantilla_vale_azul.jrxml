@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="plantilla_vale_azul" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="importe" class="java.lang.String"/>
+	<parameter name="importe_letra" class="java.lang.String"/>
+	<parameter name="concepto" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="fecha_pago" class="java.lang.String"/>
+	<parameter name="serie" class="java.lang.String"/>
+	<parameter name="folio" class="java.lang.String"/>
+	<group name="Grupo Info General">
+		<groupExpression><![CDATA[$V{PAGE_NUMBER}]]></groupExpression>
+		<groupHeader>
+			<band height="270">
+				<rectangle radius="20">
+					<reportElement x="0" y="0" width="572" height="71" backcolor="#66CCFF"/>
+				</rectangle>
+				<rectangle radius="20">
+					<reportElement mode="Transparent" x="0" y="82" width="572" height="105" backcolor="#FFFFFF"/>
+				</rectangle>
+				<rectangle radius="20">
+					<reportElement mode="Opaque" x="0" y="200" width="572" height="67" backcolor="#EAF2FF"/>
+				</rectangle>
+				<line>
+					<reportElement x="83" y="200" width="1" height="67"/>
+				</line>
+				<line>
+					<reportElement x="219" y="243" width="1" height="24"/>
+				</line>
+				<textField isBlankWhenNull="true">
+					<reportElement x="94" y="242" width="114" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{fecha}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="11" y="87" width="109" height="19"/>
+					<textElement>
+						<font fontName="Century Gothic" size="12"/>
+					</textElement>
+					<text><![CDATA[CONCEPTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="319" y="2" width="16" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[$]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Opaque" x="335" y="2" width="218" height="20" backcolor="#EAF2FF"/>
+					<textElement textAlignment="Right">
+						<font fontName="Century Gothic" size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{importe}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="473" y="243" width="80" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{folio}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="381" y="243" width="73" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{serie}]]></textFieldExpression>
+				</textField>
+				<rectangle radius="5">
+					<reportElement x="23" y="24" width="530" height="42"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="475" y="207" width="43" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="10"/>
+					</textElement>
+					<text><![CDATA[FOLIO]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="1" y="106" width="570" height="40" backcolor="#EAF2FF"/>
+					<graphicElement>
+						<pen lineWidth="0.0"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="37" y="27" width="208" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="10"/>
+					</textElement>
+					<text><![CDATA[IMPORTE (EN LETRA)]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="37" y="46" width="503" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{importe_letra}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="10" y="223" width="74" height="22" forecolor="#66CCFF"/>
+					<textElement>
+						<font fontName="Century Gothic" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CONTROL]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="10" y="106" width="542" height="71" backcolor="#FFFFFF"/>
+					<textElement textAlignment="Justified">
+						<font fontName="Century Gothic" size="13"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{concepto}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="24" y="0" width="295" height="27" forecolor="#FFFFFF"/>
+					<textElement>
+						<font fontName="Century Gothic" size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[COMPROBANTE DE GASTOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="381" y="207" width="43" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="10"/>
+					</textElement>
+					<text><![CDATA[SERIE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="94" y="206" width="100" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="10"/>
+					</textElement>
+					<text><![CDATA[FECHA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="229" y="206" width="137" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="10"/>
+					</textElement>
+					<text><![CDATA[FECHA TENTATIVA PAGO]]></text>
+				</staticText>
+				<line>
+					<reportElement x="84" y="226" width="488" height="1"/>
+				</line>
+				<textField isBlankWhenNull="true">
+					<reportElement x="233" y="242" width="114" height="20"/>
+					<textElement>
+						<font fontName="Century Gothic" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{fecha_pago}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="465" y="242" width="1" height="24"/>
+				</line>
+				<line>
+					<reportElement x="371" y="242" width="1" height="24"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="5" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{importe}.length()>0]]></printWhenExpression>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,339 @@
+/* 
+    Document   : login_pretoriano
+    Created on : 02-ene-2013, 12:41:56
+    Author     : ISCesarMartinez
+    Description:
+        CSS especial para login de sistema Pretoriano Soft.
+*/
+
+@font-face {
+	font-family: 'Serpentine';
+	src: url('fonts/serpentine.eot');
+	src: local('?'), url('fonts/serpentine.woff') format('woff'), url('fonts/serpentine.ttf') format('truetype'), url('fonts/serpentine.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}
+
+
+
+body {
+	line-height:1.5;
+}
+
+
+body
+{
+    /*
+	margin: auto;
+	padding: auto;
+	font-family: Serpentine;
+	font-size: 12px;
+	color: #363636;
+   */
+	/*text-shadow:0 1px 0 #ffffff;*/
+	 /*background: #f7f7f7 url("../../images/bg_left.jpg") repeat-y; */            
+}
+
+/*body.login
+{
+        
+	margin: 0;
+	padding: 0;
+	/* background: #262B32 url("../../images/blue/bg.png") repeat-x 0px 350px;*/
+/*	font-family: Serpentine;
+	font-size: 16px;
+	color: #363636;
+	/*text-shadow:0 1px 0 #cccccc;*/
+        
+/*        background-color: #585858;
+        background-size: 105%;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(bottom, #585858 16%, #C5C3C3 77%, #FFFFFF 100%);
+        background-image: -o-linear-gradient(bottom, #585858 16%, #C5C3C3 77%, #FFFFFF 100%);
+        background-image: -moz-linear-gradient(bottom, #585858 16%, #C5C3C3 77%, #FFFFFF 100%);
+        background-image: -webkit-linear-gradient(bottom, #585858 16%, #C5C3C3 77%, #FFFFFF 100%);
+        background-image: -ms-linear-gradient(bottom, #585858 16%, #C5C3C3 77%, #FFFFFF 100%);
+
+        background-image: -webkit-gradient(
+                linear,
+                left bottom,
+                left top,
+                color-stop(0.16, #585858),
+                color-stop(0.77, #C5C3C3),
+                color-stop(1, #FFFFFF)
+        );
+        
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#585858'); /* IE6 & IE7 */
+/*        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#585858')"; /* IE8 */
+        /*background: transparent url("../../images/login/coliseo.png") no-repeat right center;*/
+/*}*/
+
+body.login {
+        
+ margin: 0;
+ padding: 0;
+ font-family: Serpentine;
+ font-size: 16px;
+ color: #363636;
+ background-image: linear-gradient(linear,left bottom,left top,color-stop(0, rgb(87,87,87)),color-stop(1, rgb(196,194,194)));
+        background-image: -o-linear-gradient(linear,left bottom,left top,color-stop(0, rgb(87,87,87)),color-stop(1, rgb(196,194,194)));
+        background-image: -moz-linear-gradient(linear,left bottom,left top,color-stop(0, rgb(87,87,87)),color-stop(1, rgb(196,194,194)));
+        background-image: -ms-linear-gradient(linear,left bottom,left top,color-stop(0, rgb(87,87,87)),color-stop(1, rgb(196,194,194)));
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgb(87,87,87)),color-stop(1, rgb(196,194,194)));
+        
+        
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#585858'); // IE6 & IE7 /
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#585858')"; // IE8 /
+        }
+
+#envolvente1{
+position: relative;
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	text-align: left;
+}
+
+#login_wrapper
+{
+	width: 50%;
+	/*height: 400px;*/
+	margin-top: 100px;
+	display:inline-block;
+	vertical-align:top;
+}
+
+#login_top_window
+{
+	margin: 0;
+	padding: 0;
+	width: 351px;
+	height: 30px;
+}
+
+#login_body_window
+{
+	margin: 0 0 0 25px;
+	padding: 0;
+	width: 351px;
+	height: 340px;/*240px;*/
+	/*background: transparent url('../../images/blue/bg_login_window.png') no-repeat top;*/
+}
+
+#login_body_window .inner
+{
+	margin: 0;
+	padding: 0;
+	width: 300px;
+	height: 235px;
+	padding-top:10px
+}
+
+#login_body_window .inner p
+{
+	margin-top: 30px;
+}
+
+#login_footer_window
+{
+	margin: 0;
+	padding: 0;
+	width: 351px;
+	height: 30px;
+}
+
+#adholder {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top:0px;
+    
+}
+
+/*
+#adinner {
+    height: 100%;
+    width:920px;
+    margin:0px;
+    right: 0px;
+}
+.adright {
+    width:453px;
+    position: relative;
+    margin:0px;
+    height:100%;
+    overflow: hidden;
+    z-index:99;
+    float:right;
+    right: 0px;
+    
+    background-color: transparent;
+    background-image: url("../../images/login/coliseo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+*/
+
+#adinner {
+    height: 100%;
+    width:920px;
+    margin:0px;
+    right: 0px;
+}
+
+@media (max-width:1060px) { 
+#coliseo{
+	display:none !important;
+	
+	}
+	
+#login_wrapper{
+	width:100% !important;
+	}
+}
+.adright {
+    width:920px;
+    position: relative;
+    margin:0px;
+    height:100%;
+    overflow: hidden;
+    z-index:99;
+    float:right;
+    right: 0px;
+    
+    background-color: transparent;
+    background-image: url("../../images/login/coliseo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.clear 
+{
+	clear: both;
+}
+
+.alert_warning
+{
+	margin: 0;
+	padding: 0;/*padding: 1px 1px 1px 30px;*/
+	background: url(../../images/warning.png) no-repeat right center #fcf2a5;
+	border: 1px solid #edbf06;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 1px 4px #cccccc;
+ 	-webkit-box-shadow: 0 1px 2px #cccccc;
+ 	box-shadow: 0 1px 2px #cccccc;
+	color: #333333;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 10px 0 10px 0;
+	text-shadow:0 0 0 transparent;
+}
+
+.noshadow
+{
+	-moz-box-shadow: 0 0 0 transparent;
+ 	-webkit-box-shadow: 0 0 0 transparent;
+ 	box-shadow: 0 0 0 transparent;
+}
+
+a
+{
+        color: #ffffff; /*#1F92FF;*/
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+a:hover
+{
+	color: #b22a0f;/*#2F4E85;*/
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+a:active
+{
+	color: #000000;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+
+/* Input elements */
+input[type=text], input[type=password], select
+{
+	background: #6f7072 url("../../images/bg_ip.png") repeat-x;
+	padding: 5px;
+        font-family: Serpentine;
+	font-size: 14px;
+	color:  #000000;
+	font-weight: bold;
+	margin: 0;
+        border: 1px solid #6f7072;
+}
+
+input[type=text]:hover, input[type=password]:hover, textarea:hover
+{
+	background-color: #fff5d3;
+	border: 1px solid #999999;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus
+{
+	background-color: #fff5d3;
+}
+
+input[type=text].blur, input[type=password].blur, textarea.blur
+{
+	color: #cccccc; /* #999;*/
+ 	font-weight: normal;
+ 	/*font-style: italic;*/
+}
+
+.loginLinePretoriano{
+    background-color: #b22a0f; 
+    width: 100%; 
+    line-height:0.65;
+}
+
+#login_submit_text{
+    text-align: center; 
+    font-size: 28px; 
+    width: 100%;
+}
+
+#login_submit_text a
+{
+        color: #363636;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+#login_submit_text a:hover
+{
+	color: #b22a0f;/*#2F4E85;*/
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}
+
+#login_submit_text a:active
+{
+	color: #000000;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px transparent;
+}

@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Factura_carta" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true">
+	<property name="ireport.zoom" value="1.1586575189467514"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="497"/>
+	<style name="table">
+		<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+			<pen lineWidth="1.0" lineColor="#333333"/>
+			<topPen lineColor="#333333"/>
+			<leftPen lineColor="#333333"/>
+			<bottomPen lineColor="#333333"/>
+			<rightPen lineColor="#333333"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#DFDDDD"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#DFDDDD"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#DFDDDD"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#DFDDDD"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#DFDDDD"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+			<topPen lineColor="#999999"/>
+			<leftPen lineColor="#999999"/>
+			<bottomPen lineColor="#999999"/>
+			<rightPen lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#DFDDDD"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<parameter name="LOGO" class="java.lang.String"/>
+	<parameter name="EMPRESA_RAZON" class="java.lang.String"/>
+	<parameter name="EMPRESA_RFC" class="java.lang.String"/>
+	<parameter name="EMPRESA_DIRECCION" class="java.lang.String"/>
+	<parameter name="EMPRESA_UBICACION" class="java.lang.String"/>
+	<parameter name="SERIE_FOLIO" class="java.lang.String"/>
+	<parameter name="NO_CERTIFICADO" class="java.lang.String"/>
+	<parameter name="NO_APROVACION" class="java.lang.String"/>
+	<parameter name="ANIO_APROVACION" class="java.lang.String"/>
+	<parameter name="CLIENTE_NOMBRE" class="java.lang.String"/>
+	<parameter name="CLIENTE_RFC" class="java.lang.String"/>
+	<parameter name="CLIENTE_DIRECCION" class="java.lang.String"/>
+	<parameter name="CLIENTE_TEL" class="java.lang.String"/>
+	<parameter name="CLIENTE_CORREO" class="java.lang.String"/>
+	<parameter name="CLIENTE_CONTACTO" class="java.lang.String"/>
+	<parameter name="IMPUESTO_TOTAL" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Argelia\\Workspace\\FacturacionElectonica\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DATOS_IMPUESTOS" class="java.lang.Object">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="REPORTE_IMPUESTOS" class="java.lang.Object"/>
+	<parameter name="TOTAL" class="java.lang.String"/>
+	<parameter name="CADENA_ORIGINAL" class="java.lang.String"/>
+	<parameter name="SELLO_DIGITAL" class="java.lang.String"/>
+	<parameter name="COMENTARIOS" class="java.lang.String"/>
+	<parameter name="COTIZACION" class="java.lang.String"/>
+	<parameter name="DATOS_CONCEPTOS" class="java.lang.Object"/>
+	<parameter name="SUBREPORTE_CONCEPTOS" class="java.lang.Object"/>
+	<parameter name="IMPORTE_LETRA" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="TIPO_MONEDA" class="java.lang.String"/>
+	<parameter name="FECHA_IMPRESION" class="java.lang.String"/>
+	<parameter name="SUBTOTAL" class="java.lang.String"/>
+	<parameter name="QRCODE" class="java.lang.String"/>
+	<parameter name="UUID" class="java.lang.String"/>
+	<parameter name="SELLO_SAT" class="java.lang.String"/>
+	<parameter name="FOLIO_GENERADO" class="java.lang.String"/>
+	<parameter name="NO_CERTIFICADO_SAT" class="java.lang.String"/>
+	<parameter name="DESCUENTO" class="java.lang.String"/>
+	<parameter name="DESCUENTO_PORCENTAJE" class="java.lang.String"/>
+	<parameter name="CONDICIONES_PAGO" class="java.lang.String"/>
+	<parameter name="TIPO_PAGO" class="java.lang.String"/>
+	<parameter name="LUGAR_FECHA_EXPEDICION" class="java.lang.String"/>
+	<parameter name="REGIMEN_FISCAL" class="java.lang.String"/>
+	<parameter name="NUM_CUENTA" class="java.lang.String"/>
+	<parameter name="CONDICIONES_DE_PAGO" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Double"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="precio" class="java.lang.Double"/>
+	<field name="precioStr" class="java.lang.String"/>
+	<field name="totalStr" class="java.lang.String"/>
+	<field name="unidad" class="java.lang.String"/>
+	<field name="nombreConcepto" class="java.lang.String"/>
+	<field name="porcentajeDescuento" class="java.lang.String"/>
+	<variable name="TOTAL_NETO" class="java.lang.Double">
+		<variableExpression><![CDATA[10]]></variableExpression>
+	</variable>
+	<variable name="PRECIO_TOTAL" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{cantidad}*$F{precio}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="251" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="212" y="0" width="357" height="122" forecolor="#000000" backcolor="#FFFFFF"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="326" y="130" width="240" height="98" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="336" y="135" width="220" height="90" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="329" y="134" width="233" height="25" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CLIENTE_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="409" y="176" width="147" height="49" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CLIENTE_DIRECCION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="411" y="158" width="164" height="16" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Century Gothic" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CLIENTE_RFC}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="13" y="129" width="301" height="99" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="21" y="-15" width="177" height="15" forecolor="#D2E373">
+					<printWhenExpression><![CDATA[$P{NO_APROVACION}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL EMISOR]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="21" y="134" width="282" height="91" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="95" y="160" width="129" height="16" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{EMPRESA_RFC}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="23" y="136" width="280" height="22" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{EMPRESA_RAZON}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="95" y="175" width="208" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{EMPRESA_DIRECCION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="95" y="189" width="208" height="22" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{EMPRESA_UBICACION}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="9" y="0" width="176" height="87"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+			<elementGroup/>
+			<staticText>
+				<reportElement mode="Transparent" x="220" y="27" width="153" height="10" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{NO_CERTIFICADO}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CSD del Emisor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="-16" width="188" height="15" forecolor="#D2E373">
+					<printWhenExpression><![CDATA[$P{NO_APROVACION}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="160" width="30" height="15" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{EMPRESA_RFC}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="9" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[RFC:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="174" width="65" height="15" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{EMPRESA_DIRECCION}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="9" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[DIRECCION:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="160" width="40" height="15" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{CLIENTE_RFC}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="9" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[RFC:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="175" width="65" height="15" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{CLIENTE_DIRECCION}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="9" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[DIRECCION:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="21" y="89" width="135" height="15" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{COTIZACION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="376" y="27" width="177" height="10" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{NO_CERTIFICADO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="290" y="12" width="83" height="10" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{NO_CERTIFICADO}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Century Gothic" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Folio Fiscal:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="376" y="12" width="175" height="10" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{UUID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="220" y="41" width="153" height="10" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{NO_CERTIFICADO}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha y hora de certificacion:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="41" width="179" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{FECHA_IMPRESION}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="411" y="70" width="47" height="9" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{NO_CERTIFICADO}]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{FOLIO_GENERADO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="376" y="70" width="35" height="9" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{NO_CERTIFICADO}]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{SERIE_FOLIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="349" y="70" width="24" height="9" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{SERIE_FOLIO}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<text><![CDATA[Folio:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="231" width="568" height="20" forecolor="#EBEBEB" backcolor="#EBEBEB"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="4" y="232" width="31" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="10"/>
+				</textElement>
+				<text><![CDATA[Cant.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="104" y="232" width="218" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="327" y="232" width="80" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<text><![CDATA[Precio unitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="486" y="232" width="80" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="39" y="232" width="61" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<text><![CDATA[Unidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="220" y="83" width="153" height="10" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{NO_CERTIFICADO_SAT}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CSD del SAT:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="376" y="83" width="177" height="10" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{NO_CERTIFICADO_SAT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="376" y="56" width="177" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CONDICIONES_PAGO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="273" y="56" width="100" height="10" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{NO_CERTIFICADO}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<text><![CDATA[Forma de Pago:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="412" y="232" width="68" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<text><![CDATA[Descuento %]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<elementGroup/>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="0" width="568" height="21" forecolor="#EBEBEB" backcolor="#EBEBEB"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Opaque" x="3" y="2" width="32" height="18" forecolor="#000000"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="3.0" lineColor="#EBEBEB"/>
+					<topPen lineWidth="0.0" lineColor="#EBEBEB"/>
+					<leftPen lineWidth="3.0" lineColor="#EBEBEB"/>
+					<bottomPen lineWidth="0.0" lineColor="#EBEBEB"/>
+					<rightPen lineWidth="3.0" lineColor="#EBEBEB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="104" y="2" width="218" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="325" y="3" width="84" height="17" forecolor="#000000"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="3.0" lineColor="#EBEBEB"/>
+					<topPen lineWidth="0.0" lineColor="#EBEBEB"/>
+					<leftPen lineWidth="3.0" lineColor="#EBEBEB"/>
+					<bottomPen lineWidth="0.0" lineColor="#EBEBEB"/>
+					<rightPen lineWidth="3.0" lineColor="#EBEBEB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( 'MXN'.equals() ? '$'+$F{precioStr} : $F{precioStr})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="485" y="3" width="80" height="17" forecolor="#000000"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="3.0" lineColor="#EBEBEB"/>
+					<topPen lineWidth="0.0" lineColor="#EBEBEB"/>
+					<leftPen lineWidth="3.0" lineColor="#EBEBEB"/>
+					<bottomPen lineWidth="0.0" lineColor="#EBEBEB"/>
+					<rightPen lineWidth="3.0" lineColor="#EBEBEB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( 'MXN'.equals() ? '$'+$F{totalStr} : $F{totalStr})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="38" y="2" width="64" height="18" forecolor="#000000"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="3.0" lineColor="#EBEBEB"/>
+					<topPen lineWidth="0.0" lineColor="#EBEBEB"/>
+					<leftPen lineWidth="3.0" lineColor="#EBEBEB"/>
+					<bottomPen lineWidth="0.0" lineColor="#EBEBEB"/>
+					<rightPen lineWidth="3.0" lineColor="#EBEBEB"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{unidad}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="412" y="2" width="68" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{porcentajeDescuento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Prevent"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="371">
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="0" width="568" height="353" forecolor="#EBEBEB" backcolor="#EBEBEB"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="4" y="354" width="561" height="16" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{UUID}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[ESTE DOCUMENTO ES UNA REPRESENTACIÓN IMPRESA DE UN CFDI]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="139" y="6" width="425" height="135" forecolor="#EBEBEB" backcolor="#FFFFFF"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="459" y="115" width="90" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( 'MXN'.equals($P{TIPO_MONEDA}) ? '$'+$P{TOTAL}: '$'+$P{TOTAL})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="35" y="146" width="529" height="12" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{IMPORTE_LETRA}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="9"/>
+				</textElement>
+				<text><![CDATA[Importe con letra:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="8" y="254" width="275" height="11" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{SELLO_DIGITAL}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<text><![CDATA[SELLO DIGITAL DEL CFDI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="8" y="295" width="560" height="12" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{CADENA_ORIGINAL}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<text><![CDATA[CADENA ORIGINAL  DEL COMPLEMENTO DE CERTIFICACIÓN DIGITAL DEL SAT]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="9" y="307" width="555" height="35"/>
+				<textElement>
+					<font fontName="Century Gothic" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CADENA_ORIGINAL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="9" y="266" width="276" height="27"/>
+				<textElement>
+					<font fontName="Century Gothic" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{SELLO_DIGITAL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="119" y="146" width="445" height="13" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{IMPORTE_LETRA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="283" y="114" width="171" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="283" y="6" width="171" height="25" forecolor="#000000" backcolor="#EBEBEB"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<text><![CDATA[SUBTOTAL]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement mode="Opaque" x="11" y="17" width="110" height="110"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{QRCODE}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" x="287" y="254" width="275" height="11" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{SELLO_DIGITAL}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<text><![CDATA[SELLO DEL SAT]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="288" y="266" width="276" height="27"/>
+				<textElement>
+					<font fontName="Century Gothic" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{SELLO_SAT}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="315" y="56" width="249" height="1" forecolor="#757474"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="314" y="111" width="249" height="1" forecolor="#757474"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="315" y="33" width="139" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DESCUENTO_PORCENTAJE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="459" y="33" width="90" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DESCUENTO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="458" y="6" width="91" height="25" forecolor="#000000"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( '$'+'MXN'.equals() ? '$'+$P{SUBTOTAL}: $P{SUBTOTAL})]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" x="389" y="64" width="173" height="40" forecolor="#000000"/>
+				<subreportParameter name="TIPO_MONEDA">
+					<subreportParameterExpression><![CDATA[$P{TIPO_MONEDA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{DATOS_IMPUESTOS}]]></dataSourceExpression>
+				<subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{REPORTE_IMPUESTOS}]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="9" y="196" width="555" height="8" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="6" isBold="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[REGIMEN FISCAL:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="66" y="196" width="496" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{REGIMEN_FISCAL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="9" y="187" width="555" height="8" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{NO_CERTIFICADO}]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<text><![CDATA[LUGAR Y FECHA DE EXPEDICIÓN:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="113" y="187" width="449" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{LUGAR_FECHA_EXPEDICION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="9" y="160" width="555" height="8" forecolor="#000000">
+					<printWhenExpression><![CDATA[$P{NO_CERTIFICADO}]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<text><![CDATA[MÉTODO DE PAGO:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="73" y="160" width="489" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{TIPO_PAGO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="9" y="178" width="555" height="8">
+					<printWhenExpression><![CDATA[$P{NUM_CUENTA}]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<text><![CDATA[NÚMERO DE CUENTA:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="79" y="178" width="483" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{NUM_CUENTA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="209" width="151" height="11">
+					<printWhenExpression><![CDATA[$P{COMENTARIOS}]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="7"/>
+				</textElement>
+				<text><![CDATA[COMENTARIOS]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="9" y="220" width="555" height="33"/>
+				<textElement>
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{COMENTARIOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="9" y="169" width="555" height="8">
+					<printWhenExpression><![CDATA[$P{CONDICIONES_DE_PAGO}]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<text><![CDATA[CONDICIONES DE PAGO:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="86" y="169" width="100" height="8"/>
+				<textElement>
+					<font fontName="Century Gothic" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CONDICIONES_DE_PAGO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Prevent"/>
+	</summary>
+</jasperReport>

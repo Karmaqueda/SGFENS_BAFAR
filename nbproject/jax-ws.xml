@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="WSConexionMovil">
+      <implementation-class>com.tsp.sgfens.ws.WSConexionMovil</implementation-class>
+    </service>
+    <service name="InterconectaMicrosipWs">
+      <implementation-class>com.tsp.microsip.ws.InterconectaMicrosipWs</implementation-class>
+    </service>
+    <service name="WSConexionPuntoDeVenta">
+      <implementation-class>com.tsp.sgfens.ws.WSConexionPuntoDeVenta</implementation-class>
+    </service>
+  </services>
+  <clients/>
+  <jsr109>false</jsr109>
+</jax-ws>
